@@ -43,11 +43,7 @@ curl -X POST "http://localhost:8081/api/auth/register" \
 ###### Response: 
 
 ```
-{
-    "id": 1,
-    "email": "tejaswini@example.com",
-    "password": "password123"
-}
+User registered successfully
 ```
 
 
@@ -65,11 +61,7 @@ curl -X POST "http://localhost:8081/api/auth/register" \
 ###### Response: 
 
 ```
-{
-    "id": 2,
-    "email": "john.doe@example.com",
-    "password": "securePass456"
-}
+User registered successfully
 
 ```
 
@@ -96,14 +88,13 @@ curl -X POST "http://localhost:8081/api/auth/login" \
 
 ```
 
+###### 
+
 ###### Response: 
 
 ```
-<<<<<<< HEAD
-Login successful!
-=======
-Login successful! 🔥
->>>>>>> 83daecf (Update README.md)
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWphc3dpbmlAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDM2NDg5NTIsImV4cCI6MTc0MzY1MjU1Mn0.vdOGLXGMRP5b24UxeeEfhiSOUFH0lft4bO4a_Y7WskI%     
+
 ```
 
 
@@ -116,30 +107,26 @@ curl -X POST "http://localhost:8081/api/auth/login" \
      -H "Content-Type: application/json" \
      -d '{
            "email": "tejaswini@example.com",
-           "password": "wrongpassword"
-         }'                                                                                                                                                                     
-```
+           "password": "pasword123" 
+         }'
+ ```
 
 ###### Response: 
 
 ```
-<<<<<<< HEAD
-Invalid credentials! 
-=======
-Invalid credentials! ❌     
->>>>>>> 83daecf (Update README.md)
+Invalid credentials!% 
 ```
 
 ##### Database Output: 
 
 ```
-
 mysql> select * from users;
-+----+-----------------------+---------------+
-| id | email                 | password      |
-+----+-----------------------+---------------+
-|  1 | tejaswini@example.com | password123   |
-|  2 | john.doe@example.com  | securePass456 |
-|  3 | alice@example.com     | alicePass789  |
-+----+-----------------------+---------------+
++----+---------------------------+-------------------+
+| id | email                     | password          |
++----+---------------------------+-------------------+
+|  7 | tejaswini@example.com     | password123       |
+|  8 | emma.watson@example.com   | emmaSecure123     |
+|  9 | robert.downey@example.com | ironMan789        |
+| 10 | chris.evans@example.com   | captainAmerica456 |
++----+---------------------------+-------------------+
 ```
