@@ -1,0 +1,69 @@
+# Ignore target folder (compiled Java files)
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Ignore build directory (Gradle)
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Maven Wrapper files
+.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot specific files
+HELP.md
+
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.DS_Store
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Node Modules (if using frontend inside the project)
+node_modules/
+
+# System Files
+Thumbs.db
+Desktop.ini
+
+# Ignore Environment Variables & Credentials
+.env
+.env.local
+application.properties
+application.yml
+application-dev.properties
+application-prod.properties
+
