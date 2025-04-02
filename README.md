@@ -99,7 +99,11 @@ curl -X POST "http://localhost:8081/api/auth/login" \
 ###### Response: 
 
 ```
+<<<<<<< HEAD
 Login successful!
+=======
+Login successful! 🔥
+>>>>>>> 83daecf (Update README.md)
 ```
 
 
@@ -119,7 +123,11 @@ curl -X POST "http://localhost:8081/api/auth/login" \
 ###### Response: 
 
 ```
+<<<<<<< HEAD
 Invalid credentials! 
+=======
+Invalid credentials! ❌     
+>>>>>>> 83daecf (Update README.md)
 ```
 
 ##### Database Output: 
