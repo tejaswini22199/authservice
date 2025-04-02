@@ -14,18 +14,31 @@ public class AuthController {
         this.authService = authService;
     }
 
+    // Register User
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) {
-        return ResponseEntity.ok(authService.register(user));
+    public ResponseEntity<String> register(@RequestBody User user) {
+        try {
+            return ResponseEntity.ok(authService.register(user));
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
-    @PostMapping("/login") // 🔥 New Login API
+    // Login User & Return JWT Token
+    @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User user) {
-        boolean isValid = authService.validateUser(user.getEmail(), user.getPassword());
-        if (isValid) {
-            return ResponseEntity.ok("Login successful! 🔥");
-        } else {
-            return ResponseEntity.status(401).body("Invalid credentials! ❌");
+        try {
+            String token = authService.login(user.getEmail(), user.getPassword());
+            return ResponseEntity.ok(token); // 🔥 Return JWT Token
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(401).body(e.getMessage());
         }
+    }
+
+    // Validate Token API (Used by Booking Service)
+    @GetMapping("/validate")
+    public ResponseEntity<Boolean> validateToken(@RequestHeader("Authorization") String token) {
+        boolean isValid = authService.validateToken(token.replace("Bearer ", ""));
+        return ResponseEntity.ok(isValid);
     }
 }

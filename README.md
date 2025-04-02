@@ -15,7 +15,7 @@ Auth for Concert Booking
 * CREATE DATABASE authdb;
 
 ##### Run the Spring boot Application 
-
+* mvn clean install -U
 * mvn spring-boot:run
 
 ##### Apis in Auth Service 
