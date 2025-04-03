@@ -29,7 +29,7 @@ public class AuthController {
     public ResponseEntity<String> login(@RequestBody User user) {
         try {
             String token = authService.login(user.getEmail(), user.getPassword());
-            return ResponseEntity.ok(token); // 🔥 Return JWT Token
+            return ResponseEntity.ok(token); // Return JWT Token
         } catch (RuntimeException e) {
             return ResponseEntity.status(401).body(e.getMessage());
         }
