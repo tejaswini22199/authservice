@@ -1,5 +1,6 @@
 # authservice
 Auth for Concert Booking 
+
 ## Instructions to Run the Auth Application: 
 
 ##### MySQL db installation
@@ -15,6 +16,7 @@ Auth for Concert Booking
 * CREATE DATABASE authdb;
 
 ##### Run the Spring boot Application 
+* rm -rf target
 * mvn clean install -U
 * mvn spring-boot:run
 
@@ -87,8 +89,6 @@ curl -X POST "http://localhost:8081/api/auth/login" \
 
 
 ```
-
-###### 
 
 ###### Response: 
 
